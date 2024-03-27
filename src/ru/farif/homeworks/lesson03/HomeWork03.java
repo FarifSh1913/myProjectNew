@@ -1,4 +1,4 @@
-package ru.farif.homeworks;
+package ru.farif.homeworks.lesson03;
 
 import java.util.Scanner;
 
