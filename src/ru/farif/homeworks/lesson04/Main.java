@@ -39,13 +39,23 @@ public class Main {
 
     }
 
-    public static void printText(int numberForPrint, String text) {
-        for (int i = 0; i < numberForPrint; i++) {
+
+    /*
+   Метод,  принимающий в качестве аргумента целое число и строку, и печатающий в
+   консоль строку указанное кол-во раз
+    */
+    public static void printText(int addedPrintValue, String text) {
+        for (int i = 0; i < addedPrintValue; i++) {
             System.out.println(text);
         }
     }
 
 
+    /*
+  Метод,  принимающий в качестве аргумента целочисленный массив,
+  сумирующий все элементы, значение которых больше 5,
+  и печатающий полученную сумму в консоль
+   */
     public static void arraySum(int[] arrayArg) {
         int sum = 0;
         for (int i = 0; i <= arrayArg.length - 1; i++) {
@@ -56,15 +66,20 @@ public class Main {
         System.out.println(sum);
     }
 
-    public static void putNumberIn(int numberForChange, int numberInForChange) {
-        int[] arrayArgChange = new int[numberForChange];
+    /*
+    Метод,  принимающий в качестве аргумента целое число
+    и ссылку на целочисленный массив,
+    Метод должен заполнить каждую ячейку массива указанным числом
+   */
+    public static void putNumberIn(int numberChange, int numberInChange) {
+        int[] arrayArgChange = new int[numberChange];
 
         System.out.println("Введите целые числа: ");
         System.out.println("Важно!");
-        System.out.println("Длина массива равна " + numberForChange);
+        System.out.println("Длина массива равна " + numberChange);
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i <= arrayArgChange.length - 1; i++) {
+        for (int i = 0; i < arrayArgChange.length; i++) {
             int enterNumber = scanner.nextInt();
             arrayArgChange[i] = enterNumber;
         }
@@ -72,36 +87,46 @@ public class Main {
         System.out.println(Arrays.toString(arrayArgChange));
 
         for (int j = 0; j <= arrayArgChange.length - 1; j++) {
-            arrayArgChange[j] = numberInForChange;
+            arrayArgChange[j] = numberInChange;
         }
         System.out.println("Шалость удалась");
         System.out.println(Arrays.toString(arrayArgChange));
     }
 
-    public static void sumNumberIn(int numberForSum, int numberInForSum) {
-        int[] arrayArgSum = new int[numberForSum];
+    /*
+    Метод,  принимающий в качестве аргумента целое число
+    и ссылку на целочисленный массив,
+    увеличивающий каждый элемент массива на указанное чисо=ло
+   */
+    public static void sumNumberIn(int addedSumValue, int addedInSumValue) {
+        int[] arrayArgSum = new int[addedSumValue];
 
         System.out.println("Введите целые числа: ");
         System.out.println("Важно!");
-        System.out.println("Длина массива равна " + numberForSum);
+        System.out.println("Длина массива равна " + addedSumValue);
         Scanner scanner = new Scanner(System.in);
+        int enterNumber;
 
-        for (int i = 0; i <= arrayArgSum.length - 1; i++) {
-            int enterNumber = scanner.nextInt();
+        for (int i = 0; i < arrayArgSum.length; i++) {
+            enterNumber = scanner.nextInt();
             arrayArgSum[i] = enterNumber;
         }
         System.out.println("Ура!!! Вы создали массив: ");
         System.out.println(Arrays.toString(arrayArgSum));
 
 
-        for (int j = 0; j <= arrayArgSum.length - 1; j++) {
-            arrayArgSum[j] = arrayArgSum[j] + numberInForSum;
+        for (int j = 0; j < arrayArgSum.length ; j++) {
+            arrayArgSum[j] = arrayArgSum[j] + addedInSumValue;
         }
         System.out.println("Шалость удалась");
         System.out.println(Arrays.toString(arrayArgSum));
 
     }
 
+    /*
+   Метод,  принимающий в качестве аргумента целочисленный массив, и печатающий в
+   консоль информацию о том, сумма элементов какой из половин массива больше
+    */
     public static void halfSumPrint(int numberArrayHalf) {
         if(numberArrayHalf == 0) {
             System.out.println("В Java не существует способа создать массив без длины.");
@@ -122,7 +147,7 @@ public class Main {
             System.out.println("Длина массива равна " + numberArrayHalf);
             Scanner scanner = new Scanner(System.in);
 
-            for (int i = 0; i <= arrayArgHalf.length - 1; i++) {
+            for (int i = 0; i <arrayArgHalf.length; i++) {
                 int enterNumber = scanner.nextInt();
                 arrayArgHalf[i] = enterNumber;
             }
@@ -135,7 +160,7 @@ public class Main {
             for (int i = 0; i < arrayArgHalf.length / 2; i++) {
                 sum1 = sum1 + arrayArgHalf[i];
             }
-            for (int j = arrayArgHalf.length / 2; j <= arrayArgHalf.length - 1; j++) {
+            for (int j = arrayArgHalf.length / 2; j < arrayArgHalf.length; j++) {
                 sum2 = sum2 + arrayArgHalf[j];
             }
 
